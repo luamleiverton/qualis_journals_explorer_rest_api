@@ -11,4 +11,5 @@ class JournalViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['journal']
     search_fields = ['issn','journal']
+    http_method_names=['get']
 

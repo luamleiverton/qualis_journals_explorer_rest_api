@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 align='center'>Journals</h3>
+<section>
+    <container>
+        <table>
+            <thead>
+                <tr>
+                    <h4 align="center">Dados importados: {{count_included_register}}</h4>
+                </tr>
+                <tr>
+                    <th>Issn</th>
+                    <th>Journal</th>
+                    <th>Qualis</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in included_list %}
+                <tr>
+                    <td {{forloop.counter0}}>{{item.0}}</td>
+                    <td>{{item.1}}</td>
+                    <td>{{item.2}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </container>
+</section>
+<th/>
+<section>
+    <container>
+        <table>
+            <thead>
+                <tr>
+                    <h4 align="center">Dados não importados: {{count_non_included_register}}</h4>
+                </tr>
+                <tr>
+                    <th>Issn</th>
+                    <th>Journal</th>
+                    <th>Qualis</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in non_included_list %}
+                <tr>
+                    <td {{forloop.counter0}}>{{item.0}}</td>
+                    <td>{{item.1}}</td>
+                    <td>{{item.2}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </container>
+</section>
+</body>
+</html>
